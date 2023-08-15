@@ -1,85 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatGPT Prompts 2023</title>
-  <!-- Include Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/custom.min.css">
-
-      <meta name="description" content="Enhance your ChatGPT experience with a plethora of prompts from the 'Awesome ChatGPT Prompts' repository.">
-	      <!-- Open Graph Tags -->
-    <meta property="og:title" content="Welcome to the 'Awesome ChatGPT Prompts' Repository!">
-    <meta property="og:description" content="Explore a curated collection of prompts for the ChatGPT model. Elevate your text generation game effortlessly.">
-    <meta property="og:image" content="https://muftiarfan.github.io/awesome-gpt-prompts-web/assets/images/ChatGPT_logo.svg.webp">
-    <meta property="og:url" content="https://muftiarfan.github.io/awesome-gpt-prompts-web/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="ChatGPT Prompts 2023">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W5T2V87G8R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-W5T2V87G8R');
-</script>
-</head>
-<body>
-  <div class="container mt-5 ">
-  
-  <div class="row  h-100">
-  <div class="col align-self-center">
-      <h1 class="mb-4">ChatGPT Prompts</h1>
-    <p>Here lies a treasure trove of prompt samples tailor-made for the ChatGPT model.
-   </p>
-   <p>
-ChatGPT boasts impressive text generation skills akin to human language. By feeding it a prompt, you unleash its power to craft responses that seamlessly continue conversations or delve deeper into the provided topic.
-    </p>
-	<p>
-Within this hub, an array of prompts designed for use with ChatGPT awaits. The prompts are forked from <a title="View original Awesome Chatgpt prompts repository on Github" href="https://github.com/f/awesome-chatgpt-prompts" target="_blank" class="link">🧠 Awesome ChatGPT Prompts</a>
-    </p>
-	<p>
-May these prompts serve you well and bring joy to your ChatGPT endeavors!     <p>
-P.S This page was built using ChatGPT 3.5
-</p>
-    <div class="form-group">
-      <label for="actDropdown">Select an Act:</label>
-      <select class="form-control" id="actDropdown">
-        <option selected disabled>Choose</option>
-      </select>
-    </div>
-    
-    <div class="mt-4">
-      <h2>Selected Prompt:</h2>
-      <div class="input-group">
-        <code class="copy-code" id="selectedPrompt">Hello</code>
-        <div class="input-group-append">
-          <span class="input-group-text copy-message">Copy</span>
-        </div>
-      </div>
-      <div class="toast mt-2">Copied to clipboard!</div>
-    </div>
-  </div>
-  </div>
-
-  </div>
-  
-  <footer class="bg-dark-footertext-center py-3">
-    <div class="container">
-      <p class="mb-0"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
-    </div>
-  </footer>
-  <!-- Include jQuery and Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-<script src="assets/js/custom.min.js"></script>
-
-
-
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ChatGPT Prompts 2023</title>
+		<!-- Include Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/custom.min.css">
+		<meta name="description" content="Enhance your ChatGPT experience with a plethora of prompts from the 'Awesome ChatGPT Prompts' repository.">
+		<!-- Open Graph Tags -->
+		<meta property="og:title" content="Welcome to the 'Awesome ChatGPT Prompts' Repository!">
+		<meta property="og:description" content="Explore a curated collection of prompts for the ChatGPT model. Elevate your text generation game effortlessly.">
+		<meta property="og:image" content="https://muftiarfan.github.io/awesome-gpt-prompts-web/assets/images/ChatGPT_logo.svg.webp">
+		<meta property="og:url" content="https://muftiarfan.github.io/awesome-gpt-prompts-web/">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="ChatGPT Prompts 2023">
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-W5T2V87G8R"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			
+			gtag('config', 'G-W5T2V87G8R');
+		</script>
+	</head>
+	<body>
+		<div class="container mt-5 ">
+			<div class="row  h-100">
+				<div class="col align-self-center">
+					<h1 class="mb-4">ChatGPT Prompts</h1>
+					<p>Here lies a treasure trove of prompt samples tailor-made for the ChatGPT model.
+					</p>
+					<p>
+						ChatGPT boasts impressive text generation skills akin to human language. By feeding it a prompt, you unleash its power to craft responses that seamlessly continue conversations or delve deeper into the provided topic.
+					</p>
+					<p>
+						Within this hub, an array of prompts designed for use with ChatGPT awaits. The prompts are forked from <a title="View original Awesome Chatgpt prompts repository on Github" href="https://github.com/f/awesome-chatgpt-prompts" target="_blank" class="link">🧠 Awesome ChatGPT Prompts</a>
+					</p>
+					<p>
+						May these prompts serve you well and bring joy to your ChatGPT endeavors!     
+					<p>
+						P.S This page was built using ChatGPT 3.5
+					</p>
+					<div class="form-group">
+						<label for="actDropdown">Select an Act:</label>
+						<select class="form-control" id="actDropdown">
+							<option selected disabled>Choose</option>
+						</select>
+					</div>
+					<div class="mt-4">
+						<h2>Selected Prompt:</h2>
+						<div class="input-group">
+							<code class="copy-code" id="selectedPrompt">Hello</code>
+							<div class="input-group-append">
+								<span class="input-group-text copy-message">Copy</span>
+							</div>
+						</div>
+						<div class="toast mt-2">Copied to clipboard!</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="bg-dark-footertext-center py-3">
+			<div class="container">
+				<p class="mb-0"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+			</div>
+		</footer>
+		<!-- Include jQuery and Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+		<script src="assets/js/custom.min.js"></script>
+	</body>
 </html>
