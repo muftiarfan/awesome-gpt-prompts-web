@@ -175,12 +175,20 @@ P.S This page was built using ChatGPT 3.5
       });
     });
 	
-	// Initialize Clipboard.js
-  new ClipboardJS('.copy-code', {
-    text: function(trigger) {
-      return trigger.textContent;
-    }
-  });
+    // Initialize Clipboard.js
+    new ClipboardJS('.copy-code', {
+      text: function(trigger) {
+        // Send custom event to Google Analytics when text is copied
+        const copiedText = trigger.textContent;
+        const selectedAct = $("#actDropdown").val();
+        gtag('event', 'text_copied', {
+          event_category: 'Clipboard Interaction',
+          event_label: selectedAct
+        });
+        
+        return copiedText;
+      }
+    });
 
   // Show toast notification
   const toast = document.querySelector('.toast');
