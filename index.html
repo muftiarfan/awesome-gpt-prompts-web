@@ -157,6 +157,11 @@ P.S This page was built using ChatGPT 3.5
       actDropdown.on('change', function() {
         const selectedAct = $(this).val();
         
+                // Send custom event to Google Analytics
+        gtag('event', 'act_selected', {
+                  event_category: 'Dropdown Interaction',
+                  event_label: selectedAct
+                });
         for (let i = 0; i < parsedData.length; i++) {
           const act = parsedData[i][actColumnIndex];
           const prompt = parsedData[i][promptColumnIndex];
