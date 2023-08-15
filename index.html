@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Prompts 2023</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+      <meta name="description" content="Enhance your ChatGPT experience with a plethora of prompts from the 'Awesome ChatGPT Prompts' repository.">
+	      <!-- Open Graph Tags -->
+    <meta property="og:title" content="Welcome to the 'Awesome ChatGPT Prompts' Repository!">
+    <meta property="og:description" content="Explore a curated collection of prompts for the ChatGPT model. Elevate your text generation game effortlessly.">
+    <meta property="og:image" content="ChatGPT_logo.svg.webp">
+    <meta property="og:url" content="[URL to your web app]">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ChatGPT Prompts 2023">
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+    .mt-5 {
+      margin-top: 50px;
+    }
+    .bg-dark-footer {
+      background-color: #343a40;
+    }
+  .copy-message {
+    position: absolute;
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+	margin-top:5px;
+  }
+
+    .copy-code {
+      display: inline-block;
+      background-color: #f2f2f2;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+</style>
+
+</head>
+<body>
+  <div class="container mt-5 ">
+  
+  <div class="row  h-100">
+  <div class="col align-self-center">
+      <h2 class="mb-4">ChatGPT Prompts</h2>
+    <p>Here lies a treasure trove of prompt samples tailor-made for the ChatGPT model.
+   </p>
+   <p>
+ChatGPT boasts impressive text generation skills akin to human language. By feeding it a prompt, you unleash its power to craft responses that seamlessly continue conversations or delve deeper into the provided topic.
+    </p>
+	<p>
+Within this hub, an array of prompts designed for use with ChatGPT awaits. The prompts are forked from <a href="https://github.com/muftiarfan/awesome-chatgpt-prompts" target="_blank">🧠 Awesome ChatGPT Prompts</a>
+    </p>
+	<p>
+May these prompts serve you well and bring joy to your ChatGPT endeavors!     <p>
+P.S This page was built using ChatGPT 3.5
+</p>
+    <div class="form-group">
+      <label for="actDropdown">Select an Act:</label>
+      <select class="form-control" id="actDropdown">
+        <option selected disabled>Choose</option>
+      </select>
+    </div>
+    
+    <div class="mt-4">
+      <h4>Selected Prompt:</h4>
+      <div class="input-group">
+        <code class="copy-code" id="selectedPrompt">Hello</code>
+        <div class="input-group-append">
+          <span class="input-group-text copy-message">Copy</span>
+        </div>
+      </div>
+      <div class="toast mt-2">Copied to clipboard!</div>
+    </div>
+  </div>
+  </div>
+
+  </div>
+  
+  <footer class="bg-dark-footertext-center py-3">
+    <div class="container">
+      <p class="mb-0"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+      <a href="https://github.com/yourusername" target="_blank">
+        <i class="fab fa-github text-white"></i>
+      </a>
+    </div>
+  </footer>
+  <!-- Include jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Replace with your CSV file URL
+    const csvFileUrl = 'https://raw.githubusercontent.com/muftiarfan/awesome-chatgpt-prompts/main/prompts.csv';
+    
+    $.get(csvFileUrl, function(data) {
+      const parsedData = Papa.parse(data, { header: true }).data;
+      const actDropdown = $('#actDropdown');
+      
+      // Parse CSV data
+      const actColumnIndex = 'act';
+      const promptColumnIndex = 'prompt';
+      
+      parsedData.forEach(function(row) {
+        const act = row[actColumnIndex];
+        
+        if (act) {
+          actDropdown.append($('<option>', {
+            value: act,
+            text: act
+          }));
+        }
+      });
+      
+      // Dropdown change event
+      actDropdown.on('change', function() {
+        const selectedAct = $(this).val();
+        
+        for (let i = 0; i < parsedData.length; i++) {
+          const act = parsedData[i][actColumnIndex];
+          const prompt = parsedData[i][promptColumnIndex];
+          
+          if (act === selectedAct) {
+            $('#selectedPrompt').text(prompt);
+            //console.log(prompt);
+            break; // Exit the loop when the desired prompt is found
+          }
+        }
+      });
+    });
+	
+	// Initialize Clipboard.js
+  new ClipboardJS('.copy-code', {
+    text: function(trigger) {
+      return trigger.textContent;
+    }
+  });
+
+  // Show toast notification
+  const toast = document.querySelector('.toast');
+  const copyMessage = document.querySelector('.copy-message');
+
+  document.querySelectorAll('.copy-code').forEach(code => {
+    code.addEventListener('click', function() {
+      toast.classList.add('show');
+      setTimeout(function() {
+        toast.classList.remove('show');
+      }, 2000); // Hide toast after 2 seconds
+    });
+
+    code.addEventListener('mouseenter', function() {
+      copyMessage.style.visibility = 'visible';
+    });
+
+    code.addEventListener('mouseleave', function() {
+      copyMessage.style.visibility = 'hidden';
+    });
+  });
+  });
+</script>
+
+
+
+
+</body>
+</html>
